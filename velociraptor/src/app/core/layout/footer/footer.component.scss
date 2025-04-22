@@ -1,0 +1,42 @@
+@use '../../../shared/theme/colors' as *;
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.85rem;
+  background-color: $surface-light;
+  color: $text-dark;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $surface-dark;
+    color: $text-light;
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .logo-mini {
+    height: 20px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .tagline {
+    font-weight: 500;
+  }
+}

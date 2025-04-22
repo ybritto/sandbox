@@ -1,0 +1,42 @@
+<nz-layout>
+  <!-- Header -->
+  <nz-header>
+    <div class="header-content">
+      <button nz-button nzType="text" class="hamburger-icon">
+        <i nz-icon nzType="menu" nzTheme="outline"></i>
+      </button>
+      <img src="assets/logo.png" alt="App Logo" class="app-logo" />
+      <span class="app-name">VelociRaptor</span>
+    </div>
+  </nz-header>
+
+  <nz-layout>
+    <!-- Sidenav -->
+    <nz-sider [(nzCollapsed)]="isCollapsed" [nzCollapsible]="true" [nzWidth]="200">
+      <ul nz-menu [nzMode]="'inline'" [nzTheme]="'dark'">
+        <li nz-menu-item>
+          <i nz-icon nzType="dashboard" nzTheme="outline"></i>
+          <span>Dashboard</span>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="team" nzTheme="outline"></i>
+          <span>Capacity</span>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <!-- Main Section -->
+    <nz-content>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+
+  <!-- Footer -->
+  <nz-footer>
+    <div class="footer-content">
+      © 2025 VelociRaptor - All Rights Reserved
+    </div>
+  </nz-footer>
+</nz-layout>

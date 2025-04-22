@@ -1,0 +1,28 @@
+@use './shared/theme/colors' as *;
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: $background-light;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $background-dark;
+  }
+}
+
+app-footer {
+  flex-shrink: 0;
+}

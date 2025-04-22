@@ -1,0 +1,57 @@
+@use '../../../shared/theme/colors' as *;
+
+.sidenav {
+  width: 200px;
+  background-color: $surface-light;
+  color: $text-dark;
+  padding-top: 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $surface-dark;
+    color: $text-light;
+  }
+
+  &.collapsed {
+    width: 64px;
+
+    li {
+      justify-content: center;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    i {
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      background-color: $accent;
+      color: $text-dark;
+    }
+
+    &.active {
+      font-weight: bold;
+      background-color: rgba($primary, 0.2);
+    }
+  }
+}

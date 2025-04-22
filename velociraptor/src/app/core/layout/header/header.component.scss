@@ -1,0 +1,36 @@
+@use '../../../shared/theme/colors' as *;
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  height: 64px;
+  background-color: $primary;
+  color: $text-light;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    height: 80px;
+    margin-right: 0.5rem;
+  }
+
+  .app-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,35 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    background: #001529;
+    color: white;
+  
+    .hamburger-icon {
+      margin-right: 16px;
+    }
+  
+    .app-logo {
+      height: 32px;
+      margin-right: 8px;
+    }
+  
+    .app-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  
+  .main-content {
+    padding: 24px;
+    background: #f0f2f5;
+    min-height: 280px;
+  }
+  
+  .footer-content {
+    text-align: center;
+    padding: 12px 0;
+    background: #001529;
+    color: white;
+  }
