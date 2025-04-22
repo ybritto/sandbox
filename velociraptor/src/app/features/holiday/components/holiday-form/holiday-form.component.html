@@ -1,0 +1,45 @@
+<p-dialog
+  header="{{ holiday ? 'Edit' : 'Add' }} Holiday"
+  [(visible)]="visible"
+  [closable]="true"
+  [modal]="true"
+  [style]="{ width: '100%', maxWidth: '480px' }"
+  (onHide)="close()">
+  <form [formGroup]="holidayForm" (ngSubmit)="submit()">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="name">Name</label>
+        <input id="name" type="text" pInputText formControlName="name" />
+      </div>
+
+      <div class="p-field">
+        <label for="date">Date</label>
+        <input id="date" type="date" pInputText formControlName="date" />
+      </div>
+
+      <div class="p-field">
+        <label for="location">Location</label>
+        <input id="location" type="text" pInputText formControlName="location" />
+      </div>
+
+      <div class="p-field">
+        <label for="type">Type</label>
+        <p-dropdown
+          [options]="['public', 'company', 'custom']"
+          formControlName="type"
+          placeholder="Select type">
+        </p-dropdown>
+      </div>
+
+      <div class="p-field">
+        <label for="teamTags">Teams</label>
+        <p-chips formControlName="teamTags" />
+      </div>
+    </div>
+
+    <div class="p-dialog-footer">
+      <button pButton type="button" label="Cancel" (click)="close()" class="p-button-text"></button>
+      <button pButton type="submit" label="Save" [disabled]="holidayForm.invalid"></button>
+    </div>
+  </form>
+</p-dialog>

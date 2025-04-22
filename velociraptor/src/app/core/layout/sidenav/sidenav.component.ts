@@ -18,9 +18,6 @@ export class SidenavComponent {
 
   navItems = [
     { icon: 'pi pi-home', label: 'Dashboard', route: '/dashboard' },
-    { icon: 'pi pi-users', label: 'Teams', route: '/teams' },
-    { icon: 'pi pi-calendar', label: 'Planning', route: '/planning' },
-    { icon: 'pi pi-chart-line', label: 'Reports', route: '/reports' },
-    { icon: 'pi pi-cog', label: 'Settings', route: '/settings' }
+    { icon: 'pi pi-heart-fill', label: 'Holidays', route: '/holidays' }
   ];
 }

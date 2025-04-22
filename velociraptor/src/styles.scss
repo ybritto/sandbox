@@ -1,1 +1,20 @@
 @import "primeicons/primeicons.css";
+
+body.dark-theme {
+  .holiday-card {
+    background: #2C2C2C;
+    color: #FAFAFA;
+  }
+
+  .p-dialog {
+    background-color: #1B1B1B;
+    color: #FAFAFA;
+  }
+
+  .p-inputtext, .p-dropdown, .p-chips {
+    background-color: #2C2C2C;
+    border-color: #555;
+    color: #EEE;
+  }
+}
+

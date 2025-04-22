@@ -1,0 +1,22 @@
+<div class="filter-bar">
+  <input
+    type="text"
+    pInputText
+    placeholder="Search holidays..."
+    [(ngModel)]="search"
+    (ngModelChange)="emitFilter()" />
+
+  <p-dropdown
+    [options]="['Germany', 'Brazil', 'Global']"
+    [(ngModel)]="location"
+    placeholder="Location"
+    (onChange)="emitFilter()">
+  </p-dropdown>
+
+  <p-dropdown
+    [options]="['EU Team', 'LATAM Team', 'All Teams']"
+    [(ngModel)]="team"
+    placeholder="Team"
+    (onChange)="emitFilter()">
+  </p-dropdown>
+</div>

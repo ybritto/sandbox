@@ -1,0 +1,12 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  input,
+  p-dropdown {
+    flex: 1;
+    min-width: 200px;
+  }
+}

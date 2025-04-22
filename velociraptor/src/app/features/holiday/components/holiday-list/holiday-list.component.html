@@ -1,0 +1,21 @@
+<div class="holiday-list">
+    <p-card *ngFor="let holiday of holidays" class="holiday-card">
+        <div class="info">
+            <h3>{{ holiday.name }}</h3>
+            <p class="date">{{ holiday.date | date: 'fullDate' }}</p>
+            <p class="location">
+                <i class="pi pi-map-marker"></i> {{ holiday.location }}
+            </p>
+            <p *ngIf="holiday.teamTags?.length" class="tags">
+                <i class="pi pi-users"></i> {{ holiday.teamTags?.join(', ') }}
+            </p>
+        </div>
+        <div class="type" [ngClass]="holiday.type">
+            {{ holiday.type | titlecase }}
+        </div>
+        <div class="actions">
+            <button pButton icon="pi pi-pencil" class="p-button-text edit" (click)="onEdit(holiday)"></button>
+            <button pButton icon="pi pi-trash" class="p-button-text delete" (click)="onDelete(holiday)"></button>
+        </div>
+    </p-card>
+</div>

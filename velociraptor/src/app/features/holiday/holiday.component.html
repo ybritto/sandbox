@@ -1,0 +1,24 @@
+<section class="holiday-container">
+    <h2>Holidays</h2>
+
+    <app-holiday-filter (filterChange)="applyFilter($event)"></app-holiday-filter>
+
+    <app-holiday-list [holidays]="filteredHolidays"></app-holiday-list>
+
+    <app-holiday-form
+            [visible]="formOpen"
+            [holiday]="selectedHoliday"
+            (save)="onSaveHoliday($event)"
+            (cancel)="formOpen = false">
+    </app-holiday-form>
+
+
+    <button
+            pButton
+            type="button"
+            icon="pi pi-plus"
+            class="fab"
+            (click)="openCreateHoliday()"
+            label="Add Holiday">
+    </button>
+</section>
