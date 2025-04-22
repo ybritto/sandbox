@@ -11,10 +11,7 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding-top: 1.8rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.8rem 1rem 1rem;
     transition: box-shadow 0.2s ease;
     width: 100%; // ensures card fits grid cell
     position: relative;
@@ -88,21 +85,21 @@
 }
 
 .actions {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 0.5rem;
+  right: 0.5rem;
   display: flex;
   gap: 0.5rem;
+  position: static;
 
   .p-button {
-    padding: 0.3rem;
+    padding: 0.25rem;
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
-    border-radius: 4px;
-    box-shadow: none;
     background: transparent;
     border: none;
+    border-radius: 4px;
+    box-shadow: none;
     transition: background-color 0.2s ease;
   }
 
@@ -123,4 +120,14 @@
   }
 }
 
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
+  h3 {
+    flex: 1;
+    margin-right: 1rem;
+    word-break: break-word;
+  }
+}

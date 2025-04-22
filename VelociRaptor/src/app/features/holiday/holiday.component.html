@@ -17,8 +17,6 @@
         <span>{{ selectedIds.size }} selected</span>
     </div>
 
-
-
     <app-holiday-filter (filterChange)="applyFilter($event)"></app-holiday-filter>
 
     <app-holiday-list
@@ -36,7 +34,6 @@
             (save)="onSaveHoliday($event)"
             (cancel)="formOpen = false">
     </app-holiday-form>
-
 
     <button
             pButton
