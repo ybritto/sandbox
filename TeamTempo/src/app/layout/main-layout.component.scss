@@ -1,0 +1,155 @@
+/* Layout container */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 0 1rem;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.top-bar .hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.top-bar .branding {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar .branding .logo {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.top-bar .branding .app-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  margin-top: 60px; /* Push content below the fixed top bar */
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  height: 100%; /* Ensure the sidebar stretches to the bottom */
+  background-color: #343a40;
+  color: #fff;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar .menu li i {
+  color: #ffffff; /* Set icon color to white */
+  margin-right: 1rem;
+  font-size: 1.25rem; /* Adjust size if needed */
+}
+
+.sidebar .menu li:hover i {
+  color: #17a2b8; /* Optional: Change color on hover */
+}
+
+.sidebar .menu li span {
+  white-space: nowrap;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .top-bar {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+
+  .sidebar {
+    background-color: #242424;
+    color: #ffffff;
+  }
+
+  .content {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .menu li {
+    border-bottom: 1px solid #333333;
+  }
+
+  .menu li:hover {
+    background-color: #333333;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #f8f9fa;
+  color: #000;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar .menu li i {
+    color: #ffffff; /* Ensure icons remain visible in dark mode */
+  }
+
+  .sidebar .menu li:hover i {
+    color: #1e90ff; /* Optional: Highlight color for hover in dark mode */
+  }
+}

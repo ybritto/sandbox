@@ -40,7 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-/package-lock.json
+/TeamTempo/package-lock.json
 /.vscode/extensions.json
 /.vscode/launch.json
 /.vscode/tasks.json
+/package-lock.json

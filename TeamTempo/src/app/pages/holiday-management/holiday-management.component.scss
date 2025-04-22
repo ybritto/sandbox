@@ -1,0 +1,40 @@
+.holiday-management {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .p-dialog .p-fluid {
+    padding: 1rem; /* Add padding inside the dialog */
+  }
+
+  .p-dialog .field {
+    margin-bottom: 1rem; /* Add spacing between fields */
+  }
+
+  .p-dialog-footer {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 0.5rem; /* Add spacing between buttons */
+  }
+
+  .p-button-text {
+    color: #17a2b8; /* Match button text color with theme */
+  }
+
+  .p-button-danger {
+    color: #dc3545; /* Danger button color */
+  }
+
+  .p-dialog-footer {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 0.5rem; /* Add spacing between buttons */
+    padding: 1rem; /* Add padding for spacing */
+    border-top: 1px solid #ddd; /* Optional: Add a border to separate footer */
+    background-color: #f9f9f9; /* Optional: Add a background color */
+  }
+  
+}

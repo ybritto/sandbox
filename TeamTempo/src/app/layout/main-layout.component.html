@@ -1,0 +1,42 @@
+<div class="layout">
+  <!-- Top Bar -->
+  <header class="top-bar">
+    <!-- Hamburger Icon -->
+    <button
+      class="hamburger-btn"
+      (click)="toggleSidebarCollapse()"
+      aria-label="Toggle sidebar">
+      <i class="pi pi-bars"></i>
+    </button>
+
+    <!-- Branding -->
+    <div class="branding">
+      <img src="assets/logo.png" class="logo" alt="TeamTempo Logo" />
+      <span class="app-title">TeamTempo</span>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" [class.collapsed]="sidebarCollapsed">
+      <nav class="menu">
+        <ul>
+          <li *ngFor="let item of sidebarItems" routerLinkActive="active" [routerLink]="item.routerLink">
+            <i class="pi" [ngClass]="item.icon"></i>
+            <span *ngIf="!sidebarCollapsed">{{ item.label }}</span>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>&copy; 2025 TeamTempo. All rights reserved.</span>
+  </footer>  
+</div>

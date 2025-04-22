@@ -1,0 +1,59 @@
+<div class="holiday-management">
+    <p-toast></p-toast>
+  
+    <!-- Page Header -->
+    <div class="header">
+      <h2>Manage Holidays</h2>
+      <button pButton type="button" label="Add Holiday" icon="pi pi-plus" (click)="showAddDialog()"></button>
+    </div>
+  
+    <!-- Holiday Table -->
+    <p-table [value]="holidays" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} holidays">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-holiday>
+        <tr>
+          <td>{{ holiday.name }}</td>
+          <td>{{ holiday.date | date }}</td>
+          <td>{{ holiday.description }}</td>
+          <td>
+            <button pButton type="button" icon="pi pi-pencil" class="p-button-text" (click)="editHoliday(holiday)"></button>
+            <button pButton type="button" icon="pi pi-trash" class="p-button-text p-button-danger" (click)="confirmDelete(holiday)"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  
+    <!-- Add/Edit Holiday Dialog -->
+    <p-dialog [(visible)]="holidayDialog" [header]="holidayDialogTitle" [modal]="true" [closable]="false" [style]="{ width: '30vw' }">
+      <div class="p-fluid">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" pInputText [(ngModel)]="holiday.name" />
+        </div>
+        <div class="field">
+          <label for="date">Date</label>
+          <p-calendar id="date" [(ngModel)]="holiday.date" dateFormat="yy-mm-dd"></p-calendar>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3" pInputTextarea [(ngModel)]="holiday.description"></textarea>
+        </div>
+      </div>
+      
+      
+      
+        <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveHoliday()"></button>
+      
+    </p-dialog>
+  
+    <!-- Delete Confirmation Dialog -->
+    <p-confirmDialog></p-confirmDialog>
+  </div>
