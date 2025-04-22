@@ -11,13 +11,31 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding: 1rem;
+    padding-top: 1.8rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
     transition: box-shadow 0.2s ease;
     width: 100%; // ensures card fits grid cell
     position: relative;
 
     &:hover {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &.selecting {
+      box-shadow: 0 0 0 2px #FB8C00 inset;
+    }
+
+    .select-box {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      z-index: 1;
+    }
+
+    .p-checkbox {
+      transform: scale(0.9);
     }
 
     .info {
@@ -71,17 +89,20 @@
 
 .actions {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 0.75rem;
   display: flex;
   gap: 0.5rem;
 
   .p-button {
-    font-size: 1rem;
-    padding: 0.25rem;
+    padding: 0.3rem;
     width: 2rem;
     height: 2rem;
+    font-size: 1rem;
     border-radius: 4px;
+    box-shadow: none;
+    background: transparent;
+    border: none;
     transition: background-color 0.2s ease;
   }
 

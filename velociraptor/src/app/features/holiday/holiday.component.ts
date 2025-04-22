@@ -4,6 +4,7 @@ import {HolidayFilterComponent} from "./components/holiday-filter/holiday-filter
 import {HolidayListComponent} from "./components/holiday-list/holiday-list.component";
 import {ButtonDirective} from "primeng/button";
 import {HolidayFormComponent} from "./components/holiday-form/holiday-form.component";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-holiday',
@@ -12,7 +13,8 @@ import {HolidayFormComponent} from "./components/holiday-form/holiday-form.compo
     HolidayFilterComponent,
     HolidayListComponent,
     ButtonDirective,
-    HolidayFormComponent
+    HolidayFormComponent,
+    NgIf
   ],
   styleUrls: ['./holiday.component.scss']
 })
@@ -26,6 +28,8 @@ export class HolidayComponent implements OnInit {
     location: '',
     team: ''
   };
+  selectionMode = false;
+  selectedIds = new Set<string>();
 
   ngOnInit(): void {
     this.holidays = [
@@ -81,6 +85,38 @@ export class HolidayComponent implements OnInit {
           (!filter.team || h.teamTags?.includes(filter.team))
       );
     });
+  }
+
+  toggleSelectionMode(): void {
+    this.selectionMode = !this.selectionMode;
+    if (!this.selectionMode) {
+      this.selectedIds.clear();
+    }
+  }
+
+  toggleHolidaySelection(id: string): void {
+    if (this.selectedIds.has(id)) {
+      this.selectedIds.delete(id);
+    } else {
+      this.selectedIds.add(id);
+    }
+  }
+
+  deleteSelectedHolidays(): void {
+    this.holidays = this.holidays.filter(h => !this.selectedIds.has(h.id));
+    this.applyFilter(this.currentFilters);
+    this.selectedIds.clear();
+    this.selectionMode = false;
+  }
+
+  onDeleteHoliday(holiday: Holiday): void {
+    this.holidays = this.holidays.filter(h => h.id !== holiday.id);
+    this.applyFilter(this.currentFilters);
+  }
+
+  onEditHoliday(holiday: Holiday): void {
+    this.selectedHoliday = holiday;
+    this.formOpen = true;
   }
 
 }

@@ -1,9 +1,34 @@
 <section class="holiday-container">
     <h2>Holidays</h2>
 
+    <button pButton
+            icon="pi pi-check-square"
+            label="{{ selectionMode ? 'Cancel Selection' : 'Select Holidays' }}"
+            (click)="toggleSelectionMode()"
+            class="p-button-text"></button>
+
+    <div class="batch-actions" *ngIf="selectionMode && selectedIds.size">
+        <button
+                pButton
+                icon="pi pi-trash"
+                label="Delete Selected"
+                class="p-button-danger"
+                (click)="deleteSelectedHolidays()"></button>
+        <span>{{ selectedIds.size }} selected</span>
+    </div>
+
+
+
     <app-holiday-filter (filterChange)="applyFilter($event)"></app-holiday-filter>
 
-    <app-holiday-list [holidays]="filteredHolidays"></app-holiday-list>
+    <app-holiday-list
+            [holidays]="filteredHolidays"
+            [selectionMode]="selectionMode"
+            [selectedIds]="selectedIds"
+            (toggle)="toggleHolidaySelection($event)"
+            (edit)="onEditHoliday($event)"
+            (delete)="onDeleteHoliday($event)">
+    </app-holiday-list>
 
     <app-holiday-form
             [visible]="formOpen"
